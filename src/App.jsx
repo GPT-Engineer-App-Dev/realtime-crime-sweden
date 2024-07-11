@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Home, List } from "lucide-react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Layout from "./layouts/navbar"; // available: default, navbar, sidebar
+import CrimeList from "./pages/CrimeList.jsx";
 import Index from "./pages/Index.jsx";
 const queryClient = new QueryClient();
 
@@ -29,7 +30,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Index />} />
-              {/* Add more routes here as needed */}
+              <Route path="crime-list" element={<CrimeList />} />
             </Route>
           </Routes>
         </Router>
