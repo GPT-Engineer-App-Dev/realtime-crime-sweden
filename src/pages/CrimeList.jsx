@@ -10,13 +10,11 @@ const CrimeList = () => {
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
-    // Fetch crimes from local storage
     const storedCrimes = JSON.parse(localStorage.getItem('crimes')) || [];
     setCrimes(storedCrimes);
   }, []);
 
   useEffect(() => {
-    // Save crimes to local storage whenever the list changes
     localStorage.setItem('crimes', JSON.stringify(crimes));
   }, [crimes]);
 
